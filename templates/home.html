@@ -1,0 +1,21 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Welcome to a Forest Classifier and Regression model </h2>
+<p>Click on the button to select your model type.</p>
+<div class="dropdown">
+  <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+
+    <a href="{{url_for('single_prediction')}}">Individual_Classifier_Model</a>
+    <a href="{{url_for('individual_reg_prediction')}}">Individual_regression</a>
+    <a href="{{url_for('bulk_data_predict_class')}}">Bulk_Classification</a>
+    <a href="{{url_for('bulk_data_predict_regress')}}">Bulk_Regression_Model </a>
+  </div>
+  </div>
+</div>
+{% endblock %}
+

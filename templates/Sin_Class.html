@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+ <div class="login">
+	<h1>Fire Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/single_classifier" method="post">
+      <input type="text" name="Day" placeholder="Day of the month in number" required="required" /><br>
+    	<input type="text" name="Month" placeholder="Month in number" required="required" /><br>
+        <input type="text" name="Year" placeholder="Year" required="required" /><br>
+        <input type="text" name="Temperature" placeholder="Temperature in celcius" required="required" /><br>
+        <input type="text" name="Relative humidity" placeholder="relative humidity in %age" required="required" /><br>
+        <input type="text" name="Wind speed " placeholder="wind speed in m/sec" required="required" /><br>
+        <input type="text" name="Rain" placeholder="Rain in mm" required="required" /><br>
+        <input type="text" name="FFMC" placeholder="Fuel material codes" required="required" /><br>
+        <input type="text" name="DMC" placeholder="DMC FWI index" required="required" /><br>
+        <input type="text" name="DC" placeholder="Enter the value for DC" required="required" /><br>
+        <input type="text" name="ISI" placeholder="Enter the value for ISI" required="required" /><br>
+        <input type="text" name="BUI" placeholder="Enter the value for BUI" required="required" /><br>
+        <input type="text" name="FWI" placeholder="Enter the value for FWI" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <br>
+    <a href="{{url_for('home')}}">HOME_PAGE</a>
+
+ </div>
+ {{prediction_text}}
+
+{% endblock %}

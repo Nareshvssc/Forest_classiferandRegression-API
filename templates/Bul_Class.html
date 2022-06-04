@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+ <div class="login">
+	<h1>Fire Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/bulk_Classifier" method="post">
+        Username<input type="text" name="username" id="username"><br><br>
+        Password<input type="password" name="mypassword"><br><br>
+        Database Name<input type="text" name="DBname" id="DBname"><br><br>
+        Collection Name<input type="text" name="collec_name" id="collec_name"><br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Load_and_Predict_result</button>
+    </form>
+   <br>
+     <a href="{{url_for('home')}}">HOME_PAGE</a>
+
+ </div>
+
+
+{{prediction_text}}
+
+{% endblock %}
