@@ -15,7 +15,7 @@ from sklearn.preprocessing import StandardScaler
 import logger_Forest
 std_scaler = StandardScaler()
 app = Flask(__name__)
-model_1 = pickle.load(open('decision_tree.pkl.pkl', 'rb'))
+model_1 = pickle.load(open('decision_tree.pkl', 'rb'))
 model_2 = pickle.load(open('RFregression_model.pkl','rb'))
 
 @app.route('/')
